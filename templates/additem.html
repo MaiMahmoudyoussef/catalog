@@ -1,0 +1,31 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href={{url_for('static', filename = 'style.css')}}>
+</head>
+<body id ='background'>
+  <header id = 'header'>
+  <h1 id ='header1'>Catalog Application</h1>
+
+  <form action="{{url_for('gdisconnect')}}" style="display: inline-block">
+    <button type='submit'>logout</button>
+  </form>
+  <p style="display: inline-block" >{{username}}</p>
+  <img src="{{picture}}" style="width: 80px; height: 80px;border-radius: 150px;-webkit-border-radius: 150px;-moz-border-radius: 150px;"/>
+
+  </header>
+<section>
+<div id ='container'>
+
+  <form action = "{{url_for('addItem', category_name = category_name)}}" method = 'POST' style = "left: 5%;
+    position: absolute;">
+  <p>Name:</p>
+  <input type='text' size='30' name='name'>
+  <p>Description:</p>
+  <input type='text' size='30' name='description'>
+  <input type='submit' value='Create'>
+  </form>
+
+</div>
+</section>
+</body>
+</html>

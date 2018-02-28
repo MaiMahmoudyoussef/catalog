@@ -1,0 +1,58 @@
+#header {
+  background-color: #72b1a8;
+  color: white;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+#container {
+  position: relative;
+  margin: auto;
+  top: 20px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 700px;
+  height: 520px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  overflow: auto;
+}
+
+.catalog1 {
+  left: 30px;
+  position: absolute;
+}
+
+.catalog2 {
+  top:10px;
+  left: 300px;
+  position: absolute;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #D3D3D3;
+}
+
+button{
+  padding: 12px 28px;
+  border-radius: 4px;
+  background-color: #008CBA;
+
+}
+
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#header1{
+  display: inline-block;
+}
+
+#signinButton{
+    position:  absolute;
+    top: 30%;
+    left: 40%;
+}

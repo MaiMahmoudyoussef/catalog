@@ -1,0 +1,40 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href={{url_for('static', filename = 'style.css')}}>
+</head>
+<body id ='background'>
+  <header id = 'header'>
+  <h1 id ='header1'>Catalog Application</h1>
+
+  <form action="{{url_for('gdisconnect')}}" style="display: inline-block">
+    <button type='submit'>logout</button>
+  </form>
+  <p style="display: inline-block" >{{username}}</p>
+  <img src="{{picture}}" style="width: 80px; height: 80px;border-radius: 150px;-webkit-border-radius: 150px;-moz-border-radius: 150px;"/>
+
+  </header>
+<section>
+<div id ='container'>
+
+  <form action = "{{url_for('editItem', item_name=item_name)}}" method = 'POST' style = "left: 5%;
+    position: absolute;">
+  <p>Edit {{item_name}} item</p>
+  <p>Title:</p>
+  <input type='text' size='30' name='name' placeholder="{{item_name}}">
+  <p>Description:</p>
+  <input type='text' size='30' name='description' placeholder="{{description}}">
+  <p>Category:</p>
+  <select name='category'>
+{% for i in categories %}
+  <option value="{{i.name}}" >{{i.name}}</option>
+{% endfor %}
+  </select>
+</br>
+</br>
+  <input type='submit' value='submit'>
+  </form>
+
+</div>
+</section>
+</body>
+</html>

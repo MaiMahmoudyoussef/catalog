@@ -1,0 +1,26 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href={{url_for('static', filename = 'style.css')}}>
+</head>
+<body id ='background'>
+  <header id = 'header'>
+  <h1 id ='header1'>Catalog Application</h1>
+
+  <form action="{{url_for('showLogin', STATE=state)}}" style="display: inline-block">
+    <button type='submit'>login</button>
+  </form>
+  </header>
+
+<section id ='container'>
+
+  <h1 style="position:absolute;left:5%;"> Are you sure you want to delete {{item.name}}? </h1>
+
+  <form action="{{ url_for('deleteItem', item_name=item_name)}}" method = 'post' style="position: absolute;
+    top: 10%;
+    left: 5%;">
+  <input type='submit', value = 'Delete'></form>
+
+
+</section>
+</body>
+</html>
