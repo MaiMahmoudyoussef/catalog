@@ -20,7 +20,13 @@ this project is an application that provides a list of items within a variety of
 3- templates folder which contains all the HTML pages
 3- static folder which contains all the CSS files to style the web application 
 
+# Errors fix
+if you faced this error 
+TypeError: <oauth2client.client.OAuth2Credentials object at 0x00000000039DBC88>
+is not JSON serializable
+then you will need to install the leatest version of flask by running this command in your terminal 
 
-
-
+```sh 
+$ pip install flask==0.9 
+```
 

@@ -1,32 +1,39 @@
 <html>
+
 <head>
-  <link rel="stylesheet" type="text/css" href={{url_for('static', filename = 'style.css')}}>
+    <link rel="stylesheet" type="text/css" href={{url_for( 'static', filename='style.css' )}}>
 </head>
-<body id ='background'>
-  <section>
-  <header id = 'header'>
-  <h1 id ='header1'>Catalog Application</h1>
 
-  <form action="{{url_for('gdisconnect')}}" style="display: inline-block">
-    <button type='submit'>logout</button>
-  </form>
-  <p>{{username}}</p>
-  <img src="{{picture}}" style="width: 80px; height: 80px;border-radius: 150px;-webkit-border-radius: 150px;-moz-border-radius: 150px;"/>
+<body id='background'>
+    <section>
+        <header id='header'>
+            <h1 id='header1'>Catalog Application</h1>
 
-  </header>
+            <form action="{{url_for('gdisconnect')}}" style="display: inline-block">
+                <button type='submit'>logout</button>
+            </form>
+            <p>{{username}}</p>
+            <img src="{{picture}}" style="width: 80px; height: 80px;border-radius: 150px;-webkit-border-radius: 150px;-moz-border-radius: 150px;" />
 
-<div id ='container'>
-<div class='catalog1'> <h1>Categories</h1>
-  {% for i in categories %}
-  <p>{{i.name}}</p>
-  {% endfor %}
-</div>
-<div class='catalog2'><h1>Items</h1>
-  {% for i in items %}
-  <p>{{i.name}} ({{i.category.name}})</p>
-  {% endfor %}
-</div>
-</div>
-</section>
+        </header>
+
+        <div id='container'>
+            <div class='catalog1'>
+                <h1>Categories</h1> {% for i in categories %}
+                <a href="{{url_for('categoryItems', category_name=i.name)}}">{{i.name}}</a>
+              </br>
+            </br>
+                {% endfor %}
+            </div>
+            <div class='catalog2'>
+                <h1>Items</h1> {% for i in items %}
+                <a href="{{url_for('categoryItemDescription', category_name=i.category.name, item_name=i.name)}}">{{i.name}} ({{i.category.name}})</a>
+              </br>
+            </br>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>

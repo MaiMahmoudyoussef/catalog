@@ -16,12 +16,16 @@
 <div id ='container'>
 <div class='catalog1'> <h1>Categories</h1>
   {% for i in categories %}
-  <p>{{i.name}}</p>
+  <a href="{{url_for('categoryItems', category_name = i.name)}}">{{i.name}}</a>
+</br>
+</br>
   {% endfor %}
 </div>
 <div class='catalog2'><h1>Items</h1>
   {% for i in items %}
-  <p>{{i.name}} ({{i.category.name}})</p>
+  <a href="{{url_for('categoryItemDescription', category_name=i.category.name, item_name=i.name)}}">{{i.name}} ({{i.category.name}})</a>
+</br>
+</br>
   {% endfor %}
 </div>
 </div>

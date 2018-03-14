@@ -1,22 +1,26 @@
 <html>
+
 <head>
-  <link rel="stylesheet" type="text/css" href={{url_for('static', filename = 'style.css')}}>
+    <link rel="stylesheet" type="text/css" href={{url_for( 'static', filename='style.css' )}}>
 </head>
-<body id ='background'>
-  <header id = 'header'>
-  <h1 id ='header1'>Catalog Application</h1>
-  
-  <form action="{{url_for('showLogin', STATE=state)}}" style="display: inline-block">
-    <button type='submit'>login</button>
-  </form>
-  </header>
 
-<section id ='container'>
-<div class='catalog1'> <h1>{{item.name}}</h1>
+<body id='background'>
+    <header id='header'>
+        <h1 id='header1'>Catalog Application</h1>
 
-  <p>{{item.description}}</p>
+        <form action="{{url_for('showLogin', STATE=state)}}" style="display: inline-block">
+            <button type='submit'>login</button>
+        </form>
+    </header>
 
-</div>
-</section>
+    <section id='container'>
+        <div class='catalog1'>
+            <h1>{{item.name}}</h1>
+
+            <p>{{item.description}}</p>
+
+        </div>
+    </section>
 </body>
+
 </html>
